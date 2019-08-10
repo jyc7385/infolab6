@@ -9,10 +9,11 @@
 #' @return p and p values
 #' @export
 
-if(!require(Kendall)) install.packages("Kendall")
-library(Kendall)
-
 f_kendall <-function(x, k) {
+
+  if(!require(Kendall)) install.packages("Kendall")
+  library(Kendall)
+
     ken<-Kendall::Kendall(x,k) ############### here is changed
     p<-ken$sl
 
