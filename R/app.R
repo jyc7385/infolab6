@@ -599,8 +599,8 @@ server <- function(input, output, session) {
   })
 
   output$distPlot9 <- renderPlot({
-    df <- read.table(input$file_input_kendall$datapath, header = F)
-    df <- data.frame(CHR = df$V1, SNP = df$V2, P = df$V3, BP = df$V4)
+    kendall_data <- read.table(input$file_input_kendall$datapath, header = F)
+    df <- data.frame(CHR = kendall_data$V1, SNP = kendall_data$V2, P = kendall_data$V3, BP = kendall_data$V4)
 
     point_color <- input$point_color9
     highlight_point_color <- input$highlight_point_color9
@@ -660,7 +660,9 @@ server <- function(input, output, session) {
         geom_point(data=subset(df.tmp, is_highlight=="yes"), color=highlight_point_color, size=2) +
 
         # Add label using ggrepel to avoid overlapping
-        geom_label_repel(data=df.tmp[df.tmp$is_annotate=="yes",], aes(label=as.factor(SNP), alpha=0.7), size=anno_size, force=anno_force) +
+        geom_label_repel(data=df.tmp[df.tmp$is_annotate=="yes",], aes(label=as.factor(SNP)), alpha=0.7, size=anno_size, force=anno_force) +
+        # consider when chr more 2, then alpha in aes() -> 2019.08.11
+
 
         # Custom the theme:
         theme_bw(base_size = 22) +
