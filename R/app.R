@@ -32,7 +32,7 @@ ui <- navbarPage('Test App',id = "inTabset",
                           fileInput("file_input_adjust", "upload geno type adjust data", buttonLabel = "click"),
                           fileInput("file_input_kendall", "upload kendall data", buttonLabel = "click"),
                           fileInput("file_input_t", "upload t test data", buttonLabel = "click"),
-                          fileInput("file_input_gwas", "upload gwas data", buttonLabel = "click"),
+                          ### fileInput("file_input_gwas", "upload gwas data", buttonLabel = "click"),
                           actionButton('jump1to2', 'pheno hist'),
                           actionButton('jump1to3', 'pheno box plot'),
                           actionButton('jump1to4', 'pheno acc dis'),
@@ -599,7 +599,8 @@ server <- function(input, output, session) {
   })
 
   output$distPlot9 <- renderPlot({
-    df <- read.csv(input$file_input_gwas$datapath, header = T)
+    df <- read.table(input$file_input_kendall$datapath, header = F)
+    df <- data.frame(CHR = df$V1, SNP = df$V2, P = df$V3, BP = df$V4)
 
     point_color <- input$point_color9
     highlight_point_color <- input$highlight_point_color9
