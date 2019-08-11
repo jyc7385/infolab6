@@ -11,10 +11,10 @@
 
 # Input : phenotypeData, genotypeData(vcf or hapmap), the number of PCA
 
-if(!require(Kendall)) install.packages("Kendall")
-library(Kendall)
-
 GWAS_main<-function(Y,G,pc_num) {
+
+  if(!require(Kendall)) install.packages("Kendall")
+  library(Kendall)
 
 	if(is.null(Y))	stop("Phenotypes must exist.")
 	if(is.null(G))	stop("Genotypes must exist.")
