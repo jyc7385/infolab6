@@ -13,7 +13,9 @@
 
 GWAS_main<-function(Y,G,pc_num) {
 
-  if(!require(Kendall)) install.packages("Kendall")
+  if(!require(Kendall)){
+    install.packages("Kendall")
+  }
   library(Kendall)
 
 	if(is.null(Y))	stop("Phenotypes must exist.")
