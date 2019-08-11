@@ -9,8 +9,6 @@
 
 bio_shiny <- function() {
 
-setwd("C:/Users/USER/Desktop/r save")
-
 if(!require(ggplot2)) install.packages("ggplot2")
 if(!require(shiny)) install.packages("shiny")
 if(!require(shinyjs)) install.packages("shinyjs")
