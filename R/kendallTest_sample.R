@@ -14,7 +14,7 @@ f_kendall <-function(x, k) {
     if(!require(Kendall)) install.packages("Kendall")
     library(Kendall)
 
-    ken<-Kendall::Kendall(x,k) ############### here is changed
+    ken<-Kendall(x,k) ############### here is changed
     p<-ken$sl
 
     return(p)
