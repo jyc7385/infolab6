@@ -1,1 +1,1 @@
-# readme
+# infolab6

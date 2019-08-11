@@ -62,7 +62,8 @@ ui <- navbarPage('Test App',id = "inTabset",
                                           choices = c("white", "black", "blue", "red", "yellow", "gray")),
                               selectInput("box_line_type1",
                                           "box line type",
-                                          choices = c("solid", "twodash", "longdash", "dotted", "dotdash", "dashed", "blank"))
+                                          choices = c("solid", "twodash", "longdash", "dotted", "dotdash", "dashed", "blank")),
+                              actionButton('save1', 'save')
                             ),
 
                             # Show a plot of the generated distribution
