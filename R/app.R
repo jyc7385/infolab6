@@ -3,25 +3,30 @@
 #' bio_shiny function allows user to adjust the visualization of your bio data through the ui
 #'
 #' @return UI
-#' @examples
-#'     bio_shiny()
 #' @export
+#' @import ggplot2
+#' @import shiny
+#' @import shinyjs
+#' @import dplyr
+#' @import ggrepel
+#' @import RColorBrewer
 
 bio_shiny <- function() {
 
-if(!require(ggplot2)) install.packages("ggplot2")
-if(!require(shiny)) install.packages("shiny")
-if(!require(shinyjs)) install.packages("shinyjs")
-if(!require(dplyr)) install.packages("dplyr")
-if(!require(ggrepel)) install.packages("ggrepel")
-if(!require(RColorBrewer)) install.packages("RColorBrewer")
 
-library(ggplot2)
-library(shinyjs)
-library(dplyr)
-library(ggrepel)
-library(RColorBrewer)
-library(shiny)
+#if(!require(ggplot2)) install.packages("ggplot2")
+#if(!require(shiny)) install.packages("shiny")
+#if(!require(shinyjs)) install.packages("shinyjs")
+#if(!require(dplyr)) install.packages("dplyr")
+#if(!require(ggrepel)) install.packages("ggrepel")
+#if(!require(RColorBrewer)) install.packages("RColorBrewer")
+
+#library(ggplot2)
+#library(shinyjs)
+#library(dplyr)
+#library(ggrepel)
+#library(RColorBrewer)
+#library(shiny)
 
 ui <- navbarPage('Test App',id = "inTabset",
                  tabPanel(title = NULL, value = "panel1",

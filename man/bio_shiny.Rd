@@ -12,6 +12,3 @@ UI
 \description{
 bio_shiny function allows user to adjust the visualization of your bio data through the ui
 }
-\examples{
-    bio_shiny()
-}

@@ -8,11 +8,12 @@
 #' @param pheno pheno types data
 #' @return p and p values
 #' @export
+#' @import Kendall
 
 f_kendall <-function(x, k) {
 
-    if(!require(Kendall)) install.packages("Kendall")
-    library(Kendall)
+#    if(!require(Kendall)) install.packages("Kendall")
+#    library(Kendall)
 
     ken<-Kendall(x,k) ############### here is changed
     p<-ken$sl
